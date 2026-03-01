@@ -85,33 +85,21 @@ void setup(void) {
   delay(100);
 }
 
-void loop() {
 
-  /* Get new sensor events with the readings */
+  /* Changed to be more friendly to python */
+  void loop() {
   sensors_event_t a, g, temp;
   mpu.getEvent(&a, &g, &temp);
 
-  /* Print out the values */
-  Serial.print("Acceleration X: ");
-  Serial.print(a.acceleration.x);
-  Serial.print(", Y: ");
-  Serial.print(a.acceleration.y);
-  Serial.print(", Z: ");
-  Serial.print(a.acceleration.z);
-  Serial.println(" m/s^2");
+  // CSV format:
+  // ax, ay, az, gx, gy, gz, temperature
+  Serial.print(a.acceleration.x); Serial.print(",");
+  Serial.print(a.acceleration.y); Serial.print(",");
+  Serial.print(a.acceleration.z); Serial.print(",");
+  Serial.print(g.gyro.x);          Serial.print(",");
+  Serial.print(g.gyro.y);          Serial.print(",");
+  Serial.print(g.gyro.z);          Serial.print(",");
+  Serial.println(temp.temperature);
 
-  Serial.print("Rotation X: ");
-  Serial.print(g.gyro.x);
-  Serial.print(", Y: ");
-  Serial.print(g.gyro.y);
-  Serial.print(", Z: ");
-  Serial.print(g.gyro.z);
-  Serial.println(" rad/s");
-
-  Serial.print("Temperature: ");
-  Serial.print(temp.temperature);
-  Serial.println(" degC");
-
-  Serial.println("");
-  delay(500);
+  delay(50); // ~20 Hz
 }
