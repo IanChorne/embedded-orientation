@@ -1,4 +1,4 @@
-# Embedded Orientation & Control System
+# Embedded Orientation & Flight Sensor Telemetry System
 
 ## Overview
 This project demonstrates end-to-end embedded software development,
