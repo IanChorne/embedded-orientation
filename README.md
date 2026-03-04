@@ -13,11 +13,12 @@ IMU-based orientation sensing and data visualization.
 - Linux Python application controlling hardware over /dev/ttyACM*
 - VirtualBox-based Linux development environment
 - Verified integration and testing using minicom and Python
-
-## Planned Features
 - IMU (accelerometer + gyroscope) integration
 - Real-time orientation data streaming
 - Python-based visualization and logging
+
+## Planned Features
+- Improved GUI showcasing gyroscopic data
 - Basic test artifacts and documentation
 
 ## Technologies Used
